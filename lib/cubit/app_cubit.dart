@@ -17,7 +17,7 @@ class AppCubit extends Cubit<AppState> {
   void getLinkVideo(){
     // print('===================${linkDownloader.text.toString()}=================');
     // print('===================${url_video}=================');
-    emit(LoadedState());
+    emit(LoadingState());
     DioApi.getData(
         url: BASE_URL,
         query: {
