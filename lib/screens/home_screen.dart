@@ -139,7 +139,7 @@ class HomeScreen extends StatelessWidget {
                             child: MaterialButton(
                               onPressed: () {
 
-                                cubit.getLinkVideo();
+                                cubit.getLinkVideo(context);
                                 // Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen(),),);
                               },
                               child: Text(

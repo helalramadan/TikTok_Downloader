@@ -1,12 +1,12 @@
-class appModel {
+class AppModel {
   int? code;
   String? msg;
   double? processedTime;
   DataModel? data;
 
-  appModel({this.code, this.msg, this.processedTime, this.data});
+  AppModel({this.code, this.msg, this.processedTime, this.data});
 
-  appModel.fromJson(Map<String, dynamic> json) {
+  AppModel.fromJson(Map<String, dynamic> json) {
     code = json['code'];
     msg = json['msg'];
     processedTime = json['processed_time'];
