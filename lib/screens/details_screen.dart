@@ -75,7 +75,7 @@ class DetailsScreen extends StatelessWidget {
                             clipBehavior: Clip.antiAliasWithSaveLayer,
                             child: MaterialButton(
                               onPressed: () {
-
+                                AppCubit.get(context).dwonloadVideo(model.data!.play!);
                               },
                               child: Text(
                                 'Download Video',

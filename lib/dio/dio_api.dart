@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:dio/dio.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:tiktok_downloader/strings.dart';
 
 class DioApi {
@@ -22,5 +25,13 @@ class DioApi {
       url,
       queryParameters: query,
     );
+  }
+  static Future<Response> dwonloadVideo({ required String url,})async{
+    Directory directory=await getApplicationDocumentsDirectory();
+  return await dio!.download(
+      url,'${directory.path}'
+
+    );
+
   }
 }

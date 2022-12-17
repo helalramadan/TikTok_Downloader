@@ -36,4 +36,17 @@ AppModel? model;
       emit(ErrorState(e.toString()));
     });
   }
+  void dwonloadVideo(String url){
+
+    emit(LoadingState());
+    DioApi.dwonloadVideo(url:' ${url}',).then((value) {
+
+      model=AppModel.fromJson(value.data);
+      print(model);
+
+      emit(SuccessState());
+    }).catchError((e){
+      emit(ErrorState(e.toString()));
+    });
+  }
 }
