@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tiktok_downloader/cubit/app_cubit.dart';
+import 'package:tiktok_downloader/models/model.dart';
+import 'package:tiktok_downloader/screens/details_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
-  var appModel;
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -150,6 +152,9 @@ class HomeScreen extends StatelessWidget {
                                 color: Colors.white,
                               ),
                             ),
+                            IconButton(onPressed: (){
+
+                            }, icon: Icon(Icons.download))
                           ],
                         ),
                       ),

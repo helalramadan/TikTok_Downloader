@@ -15,10 +15,10 @@ class AppCubit extends Cubit<AppState> {
   String url_video='';
 
   static AppCubit get(context)=>BlocProvider.of(context);
-AppModel? model;
+ AppModel? model;
   void getLinkVideo(context){
-    // print('===================${linkDownloader.text.toString()}=================');
-    // print('===================${url_video}=================');
+    print('===================${linkDownloader.text.toString()}=================');
+    print('===================${url_video}=================');
     emit(LoadingState());
     DioApi.getData(
         url: BASE_URL,
@@ -30,20 +30,7 @@ AppModel? model;
       model=AppModel.fromJson(value.data);
       print(model);
 
-      Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen( model!)));
-      emit(SuccessState());
-    }).catchError((e){
-      emit(ErrorState(e.toString()));
-    });
-  }
-  void dwonloadVideo(String url){
-
-    emit(LoadingState());
-    DioApi.dwonloadVideo(url:' ${url}',).then((value) {
-
-      model=AppModel.fromJson(value.data);
-      print(model);
-
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen(model!)));
       emit(SuccessState());
     }).catchError((e){
       emit(ErrorState(e.toString()));

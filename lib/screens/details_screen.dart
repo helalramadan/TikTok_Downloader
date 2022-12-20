@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tiktok_downloader/cubit/app_cubit.dart';
+import 'package:tiktok_downloader/download_files.dart';
 import 'package:tiktok_downloader/models/model.dart';
 import 'package:tiktok_downloader/webview.dart';
 
@@ -75,7 +76,8 @@ class DetailsScreen extends StatelessWidget {
                             clipBehavior: Clip.antiAliasWithSaveLayer,
                             child: MaterialButton(
                               onPressed: () {
-                                AppCubit.get(context).dwonloadVideo(model.data!.play!);
+                                DownloadFiles.openFile(url: model.data!.play!);
+                                // AppCubit.get(context).dwonloadVideo(model.data!.play!);
                               },
                               child: Text(
                                 'Download Video',
